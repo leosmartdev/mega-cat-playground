@@ -1,0 +1,56 @@
+{
+  "name": "Lab Cats #1",
+  "collection": "Mega Cat Labs: Lab Cats v1",
+  "version": "1.0",
+  "description": "What do you get when you combine technology, furry cats, and a sprinkle of magic?",
+  "image": "ipfs://NewUriToReplace/1.png",
+  "dna": "8837820aa42ac6366eb625839d9d0c72d464132a",
+  "edition": 1,
+  "date": 1637731145422,
+  "attributes": [
+    {
+      "trait_type": "Pet",
+      "value": "fairy"
+    },
+    {
+      "trait_type": "Skin",
+      "value": "human"
+    },
+    {
+      "trait_type": "Weapon",
+      "value": "scroll"
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Mega Cat Power Index",
+      "value": 5,
+      "max_value": 10
+    },
+    {
+      "trait_type": "Prowess",
+      "value": 1
+    },
+    {
+      "trait_type": "Hereditary Material",
+      "value": "1:fairy#10.png-1:human#40.png-1:scroll#10.png"
+    },
+    {
+      "display_type": "boost_number",
+      "trait_type": "Feline Friskiness",
+      "value": 40
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Uncommon"
+    },
+    {
+      "trait_type": "Voracity",
+      "value": "Average"
+    },
+    {
+      "trait_type": "Breed",
+      "value": "Feline"
+    }
+  ],
+  "compiler": "Mega Cat Labs ProcGen NFT Collection Engine"
+}

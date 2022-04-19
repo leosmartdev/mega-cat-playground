@@ -1,0 +1,52 @@
+{
+  "name": "Lab Cats #5",
+  "collection": "Mega Cat Labs: Lab Cats v1",
+  "version": "1.0",
+  "description": "What do you get when you combine technology, furry cats, and a sprinkle of magic?",
+  "image": "ipfs://NewUriToReplace/5.png",
+  "dna": "b581b26bc638e572fb8b90676d72a64aa6908f3e",
+  "edition": 5,
+  "date": 1644603606781,
+  "attributes": [
+    {
+      "trait_type": "Setting",
+      "value": "Nintendo"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Glass"
+    },
+    {
+      "trait_type": "Location",
+      "value": "THE-MOON"
+    },
+    {
+      "trait_type": "Style",
+      "value": "FUTURE"
+    },
+    {
+      "trait_type": "Literary Club",
+      "value": "DEGEN"
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Mega Cat Power Index",
+      "value": 7,
+      "max_value": 10
+    },
+    {
+      "trait_type": "Prowess",
+      "value": 5
+    },
+    {
+      "trait_type": "Hereditary Material",
+      "value": "6:Nintendo#200.png|10:Glass#200.png|8:THE-MOON#333.png|2:FUTURE#1333.png|1:DEGEN#1111.png"
+    },
+    {
+      "display_type": "boost_number",
+      "trait_type": "Feline Friskiness",
+      "value": 29
+    }
+  ],
+  "compiler": "Mega Cat Labs ProcGen NFT Collection Engine"
+}

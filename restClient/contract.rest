@@ -1,0 +1,17 @@
+### Smart Contract Deployment
+POST https://blox-nft-metadata-api.herokuapp.com/blockchain/contract/staging/deploy
+Authorization: Bearer 213df0c8-8443-11ec-a8a3-0242ac120002
+content-type: application/json
+
+{
+    "contractName": "ChildMegaTokens",
+    "network": "mumbai",
+    "verifyContract": false,
+    "constructorArgs": {
+        "collectionName": "BookCoin",
+        "uri": "https://bookcoin.megacatlabs.io/metadata/token/{id}",
+        "contractUri": "https://bookcoin.megacatlabs.io/metadata",
+        "royaltyFeeRecipient": "0xd954F4513BdE1E00F3986630A7e73c4f9aA564fE",
+        "royaltyFee": 100
+    }
+}

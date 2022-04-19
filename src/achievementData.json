@@ -1,0 +1,212 @@
+{
+  "collector": {
+    "achievementId": "collector",
+    "actionTaken": "Collector",
+    "title": "Have at least five purchased NFTs in your collection",
+    "type": "HaveFivePurchasedNFTsInCollection",
+    "point": 10,
+    "status": true,
+    "image": "https://bkcn.s3.amazonaws.com/20511948.jpeg",
+    "state": "Locked"
+  },
+  "avid_collector": {
+    "achievementId": "avid_collector",
+    "actionTaken": "Avid Collector",
+    "title": "Purchase at least 25 NFTs",
+    "type": "PurchaseAtLeast25NFTs",
+    "point": 10,
+    "status": true,
+    "image": "https://bkcn.s3.amazonaws.com/20511948.jpeg",
+    "state": "Locked"
+  },
+  "first_time_buyer": {
+    "achievementId": "first_time_buyer",
+    "actionTaken": "First Time Buyer",
+    "title": "Purchase your first NFT on MCL",
+    "type": "PurchaseYourFirstNFTonMCL",
+    "point": 10,
+    "status": true,
+    "image": "https://bkcn.s3.amazonaws.com/20511948.jpeg",
+    "state": "Locked"
+  },
+  "first_time_avatar": {
+    "achievementId": "first_time_avatar",
+    "actionTaken": "First Time Avatar",
+    "title": "Set profile image for the first time",
+    "type": "SetAvatarFristTime",
+    "point": 10,
+    "status": true,
+    "image": "https://bkcn.s3.amazonaws.com/20511948.jpeg",
+    "state": "Locked"
+  },
+  "digital_roadshow": {
+    "achievementId": "digital_roadshow",
+    "actionTaken": "Digital Roadshow",
+    "title": "List your first NFT for auction",
+    "type": "ListFirstNFTforAuction",
+    "point": 10,
+    "status": true,
+    "image": "https://bkcn.s3.amazonaws.com/20511948.jpeg",
+    "state": "Locked"
+  },
+  "barterdom": {
+    "achievementId": "barterdom",
+    "actionTaken": "Barterdom",
+    "title": "Trade NFTs for the first time on MCL",
+    "type": "TradeNFTsFirstTimeOnMCL",
+    "point": 10,
+    "status": true,
+    "image": "https://bkcn.s3.amazonaws.com/20511948.jpeg",
+    "state": "Locked"
+  },
+  "trading_post": {
+    "achievementId": "trading_post",
+    "actionTaken": "Trading Post",
+    "title": "Trade at least five NFTs on the MCL marketplace",
+    "type": "TradeFiveNFTsOnMCL",
+    "point": 10,
+    "status": true,
+    "image": "https://bkcn.s3.amazonaws.com/20511948.jpeg",
+    "state": "Locked"
+  },
+  "moving_assets": {
+    "achievementId": "moving_assets",
+    "actionTaken": "Moving Assets",
+    "title": "List your first NFT for sale on MCL",
+    "type": "ListYourFirstNFTforSaleOnMCL",
+    "point": 10,
+    "status": true,
+    "image": "https://bkcn.s3.amazonaws.com/20511948.jpeg",
+    "state": "Locked"
+  },
+  "merchant": {
+    "achievementId": "merchant",
+    "actionTaken": "Merchant",
+    "title": "Have at least five NFTs listed for sale at once",
+    "type": "HaveAtleastFiveNFTsListedForSaleAtOnce",
+    "point": 10,
+    "status": true,
+    "image": "https://bkcn.s3.amazonaws.com/20511948.jpeg",
+    "state": "Locked"
+  },
+  "big_bidder": {
+    "achievementId": "big_bidder",
+    "actionTaken": "Big Bidder",
+    "title": "Win your first auction",
+    "type": "WinYourFirstAuction",
+    "point": 10,
+    "status": true,
+    "image": "https://bkcn.s3.amazonaws.com/20511948.jpeg",
+    "state": "Locked"
+  },
+  "bidding_enjoyer": {
+    "achievementId": "bidding_enjoyer",
+    "actionTaken": "Bidding Enjoyer",
+    "title": "Win five auction",
+    "type": "WinFiveAuctions",
+    "point": 10,
+    "status": true,
+    "image": "https://bkcn.s3.amazonaws.com/20511948.jpeg",
+    "state": "Locked"
+  },
+  "top_of_the_class": {
+    "achievementId": "top_of_the_class",
+    "actionTaken": "Top of the Class",
+    "title": "Win an auction with at least 10 bids",
+    "type": "WinAuctionWith10bids",
+    "point": 10,
+    "status": true,
+    "image": "https://bkcn.s3.amazonaws.com/20511948.jpeg",
+    "state": "Locked"
+  },
+  "long_term_commitment": {
+    "achievementId": "long_term_commitment",
+    "actionTaken": "Long Term Commitment",
+    "title": "Have an active MCL account for 1 year",
+    "type": "HaveActiveMCLAccountFor1Year",
+    "point": 10,
+    "status": true,
+    "image": "https://bkcn.s3.amazonaws.com/20511948.jpeg",
+    "state": "Locked"
+  },
+  "dedication": {
+    "achievementId": "dedication",
+    "actionTaken": "Dedication",
+    "title": "Log in for five days consecutively",
+    "type": "LoginForFiveDaysConsecutive",
+    "point": 10,
+    "status": true,
+    "image": "https://bkcn.s3.amazonaws.com/20511948.jpeg",
+    "state": "Locked"
+  },
+  "super_fan": {
+    "achievementId": "super_fan",
+    "actionTaken": "Super Fan",
+    "title": "Log in once a week for a year",
+    "type": "LoginOnceAWeekForAYear",
+    "point": 10,
+    "status": true,
+    "image": "https://bkcn.s3.amazonaws.com/20511948.jpeg",
+    "state": "Locked"
+  },
+  "art_broker": {
+    "achievementId": "art_broker",
+    "actionTaken": "Art Broker",
+    "title": "Sell at least 25 NFTs",
+    "type": "SellAtLeast25NFTs",
+    "point": 10,
+    "status": true,
+    "image": "https://bkcn.s3.amazonaws.com/20511948.jpeg",
+    "state": "Locked"
+  },
+  "put_yourself_out_there": {
+    "achievementId": "put_yourself_out_there",
+    "actionTaken": "Put Yourself Out There",
+    "title": "Fully complete your user profile",
+    "type": "FullyCompleteYourUserProfile",
+    "point": 10,
+    "status": true,
+    "image": "https://bkcn.s3.amazonaws.com/20511948.jpeg",
+    "state": "Locked"
+  },
+  "well_rounded": {
+    "achievementId": "well_rounded",
+    "actionTaken": "Well Rounded",
+    "title": "List, Trade, and win an auction at least one time each",
+    "type": "ListTradeWinAnAuction",
+    "point": 10,
+    "status": true,
+    "image": "https://bkcn.s3.amazonaws.com/20511948.jpeg",
+    "state": "Locked"
+  },
+  "creative_first": {
+    "achievementId": "creative_first",
+    "actionTaken": "Creative First",
+    "title": "Mint your first NFT for sale on MCL",
+    "type": "MintYourFirstNFTForSaleOnMCL",
+    "point": 10,
+    "status": true,
+    "image": "https://bkcn.s3.amazonaws.com/20511948.jpeg",
+    "state": "Locked"
+  },
+  "big_money_moves": {
+    "achievementId": "big_money_moves",
+    "actionTaken": "Big Money Moves",
+    "title": "Relist and sell a NFT for at least twice its original purchase value",
+    "type": "RelistAndSellAnftForAtLeastTwice",
+    "point": 10,
+    "status": true,
+    "image": "https://bkcn.s3.amazonaws.com/20511948.jpeg",
+    "state": "Locked"
+  },
+  "lucky": {
+    "achievementId": "lucky",
+    "actionTaken": "Lucky",
+    "title": "Win an auction where the original highest bidder didn't claim the item",
+    "type": "WinAnAuctionWhereTheSecond",
+    "point": 10,
+    "status": true,
+    "image": "https://bkcn.s3.amazonaws.com/20511948.jpeg",
+    "state": "Locked"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "name": "Lab Cats #7",
+  "collection": "Mega Cat Labs: Lab Cats v1",
+  "version": "1.0",
+  "description": "What do you get when you combine technology, furry cats, and a sprinkle of magic?",
+  "image": "ipfs://NewUriToReplace/7.png",
+  "dna": "0b53cdc643295a8408dbb4876e52b2358721cead",
+  "edition": 7,
+  "date": 1644603607998,
+  "attributes": [
+    {
+      "trait_type": "Setting",
+      "value": "Space"
+    },
+    {
+      "trait_type": "Material",
+      "value": "Black-Paper"
+    },
+    {
+      "trait_type": "Location",
+      "value": "NEW-YORK-CITY"
+    },
+    {
+      "trait_type": "Style",
+      "value": "EDITORIAL"
+    },
+    {
+      "trait_type": "Literary Club",
+      "value": "META"
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Mega Cat Power Index",
+      "value": 7,
+      "max_value": 10
+    },
+    {
+      "trait_type": "Prowess",
+      "value": 7
+    },
+    {
+      "trait_type": "Hereditary Material",
+      "value": "10:Space#1000.png|3:Black-Paper#1000.png|5:NEW-YORK-CITY#333.png|1:EDITORIAL#1000.png|2:META#1111.png"
+    },
+    {
+      "display_type": "boost_number",
+      "trait_type": "Feline Friskiness",
+      "value": 1
+    }
+  ],
+  "compiler": "Mega Cat Labs ProcGen NFT Collection Engine"
+}

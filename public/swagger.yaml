@@ -1,0 +1,1015 @@
+components:
+    examples: {}
+    headers: {}
+    parameters: {}
+    requestBodies: {}
+    responses: {}
+    schemas:
+        SingleTeam:
+            properties:
+                title:
+                    type: string
+                    description: 'Team Title'
+                    example: 'Sample team'
+                description:
+                    type: string
+                    description: 'Some description about team'
+                    example: 'Some Description'
+                image:
+                    type: string
+                    nullable: true
+            required:
+                - title
+                - image
+            type: object
+            additionalProperties: false
+        SingleTeamResponse:
+            properties:
+                message:
+                    type: string
+                data:
+                    $ref: '#/components/schemas/SingleTeam'
+            required:
+                - message
+                - data
+            type: object
+            additionalProperties: false
+        TeamsResponse:
+            properties:
+                data:
+                    items:
+                        $ref: '#/components/schemas/SingleTeam'
+                    type: array
+            required:
+                - data
+            type: object
+            additionalProperties: false
+        AuctionBidResponse:
+            properties:
+                userId:
+                    properties:
+                        username:
+                            type: string
+                        name:
+                            type: string
+                    required:
+                        - username
+                        - name
+                    type: object
+                bidAmount:
+                    type: number
+                    format: double
+            required:
+                - userId
+                - bidAmount
+            type: object
+            additionalProperties: false
+        Pick_AuctionPayload.Exclude_keyofAuctionPayload.offerId__:
+            properties:
+                id:
+                    type: number
+                    format: double
+                status:
+                    type: string
+                ownerId:
+                    properties:
+                        username:
+                            type: string
+                        name:
+                            type: string
+                    required:
+                        - username
+                        - name
+                    type: object
+                winnerId:
+                    properties:
+                        username:
+                            type: string
+                        name:
+                            type: string
+                    required:
+                        - username
+                        - name
+                    type: object
+                bids:
+                    items:
+                        $ref: '#/components/schemas/AuctionBidResponse'
+                    type: array
+                isClaimed:
+                    type: boolean
+                expirationTime:
+                    type: string
+                    description: 'Expiration timestamp'
+                    example: '123456789'
+                startingBid:
+                    type: number
+                    format: double
+                    description: 'Starting Bid, amount in USD'
+                    example: '123'
+            required:
+                - id
+                - status
+                - ownerId
+                - bids
+                - expirationTime
+                - startingBid
+            type: object
+            description: 'From T, pick a set of properties whose keys are in the union K'
+        AuctionResponse:
+            properties:
+                id:
+                    type: number
+                    format: double
+                status:
+                    type: string
+                ownerId:
+                    properties:
+                        username:
+                            type: string
+                        name:
+                            type: string
+                    required:
+                        - username
+                        - name
+                    type: object
+                winnerId:
+                    properties:
+                        username:
+                            type: string
+                        name:
+                            type: string
+                    required:
+                        - username
+                        - name
+                    type: object
+                bids:
+                    items:
+                        $ref: '#/components/schemas/AuctionBidResponse'
+                    type: array
+                isClaimed:
+                    type: boolean
+                expirationTime:
+                    type: string
+                    description: 'Expiration timestamp'
+                    example: '123456789'
+                startingBid:
+                    type: number
+                    format: double
+                    description: 'Starting Bid, amount in USD'
+                    example: '123'
+            required:
+                - id
+                - status
+                - ownerId
+                - bids
+                - expirationTime
+                - startingBid
+            type: object
+            additionalProperties: false
+        nftAttribute:
+            properties:
+                type:
+                    type: string
+                name:
+                    type: string
+                value:
+                    type: string
+            required:
+                - type
+                - name
+                - value
+            type: object
+            additionalProperties: false
+        nftMedia:
+            properties:
+                type:
+                    type: string
+                value:
+                    type: string
+            required:
+                - type
+                - value
+            type: object
+            additionalProperties: false
+        nftContract:
+            properties:
+                chain:
+                    type: string
+                address:
+                    type: string
+                count:
+                    type: number
+                    format: double
+                name:
+                    type: string
+                description:
+                    type: string
+                symbol:
+                    type: string
+                url:
+                    type: string
+                imageUrl:
+                    type: string
+                media:
+                    items:
+                        $ref: '#/components/schemas/nftMedia'
+                    type: array
+                verified:
+                    type: boolean
+                premium:
+                    type: boolean
+                categories:
+                    items:
+                        type: string
+                    type: array
+            required:
+                - chain
+                - address
+                - count
+                - name
+                - description
+                - symbol
+                - url
+                - imageUrl
+                - media
+                - verified
+                - premium
+                - categories
+            type: object
+            additionalProperties: false
+        NftResponse:
+            properties:
+                id:
+                    type: string
+                address:
+                    type: string
+                chain:
+                    type: string
+                name:
+                    type: string
+                description:
+                    type: string
+                imageUrl:
+                    type: string
+                imagePreviewUrl:
+                    type: string
+                imageThumbnailUrl:
+                    type: string
+                animationUrls:
+                    items:
+                        type: string
+                    type: array
+                fungible:
+                    type: boolean
+                attributes:
+                    items:
+                        $ref: '#/components/schemas/nftAttribute'
+                    type: array
+                contract:
+                    $ref: '#/components/schemas/nftContract'
+                collectionIdentifier:
+                    type: string
+            required:
+                - id
+                - address
+                - chain
+                - name
+                - description
+                - imageUrl
+                - imagePreviewUrl
+                - imageThumbnailUrl
+                - animationUrls
+                - fungible
+                - attributes
+                - contract
+                - collectionIdentifier
+            type: object
+            additionalProperties: false
+        OffersForAuction:
+            properties:
+                id:
+                    type: string
+                nft:
+                    $ref: '#/components/schemas/NftResponse'
+                sellerId:
+                    type: string
+                sellerNickname:
+                    type: string
+                sellerAddress:
+                    type: string
+                startDate:
+                    type: string
+                type:
+                    type: string
+                status:
+                    type: string
+                dataToSign:
+                    type: string
+                txInCustody:
+                    type: string
+                createdOn:
+                    type: string
+                createdBy:
+                    type: string
+                modifiedOn:
+                    type: string
+                modifiedBy:
+                    type: string
+                signed:
+                    type: boolean
+                currency:
+                    type: string
+                price:
+                    type: number
+                    format: double
+                auction:
+                    $ref: '#/components/schemas/AuctionResponse'
+            required:
+                - id
+                - nft
+                - sellerId
+                - sellerNickname
+                - sellerAddress
+                - startDate
+                - type
+                - status
+                - dataToSign
+                - txInCustody
+                - createdOn
+                - createdBy
+                - modifiedOn
+                - modifiedBy
+                - signed
+                - currency
+                - price
+            type: object
+            additionalProperties: false
+        AuctionOfferResponse:
+            properties:
+                message:
+                    type: string
+                data:
+                    items:
+                        $ref: '#/components/schemas/OffersForAuction'
+                    type: array
+            required:
+                - message
+                - data
+            type: object
+            additionalProperties: false
+        SingleAuctionResponse:
+            properties:
+                auction:
+                    $ref: '#/components/schemas/AuctionResponse'
+                offer:
+                    properties:
+                        sellerAddress: {}
+                        price: {}
+                        id: {}
+                    required:
+                        - sellerAddress
+                        - price
+                        - id
+                    type: object
+            required:
+                - auction
+            type: object
+            additionalProperties: false
+        BidPayload:
+            properties:
+                bidAmount:
+                    type: number
+                    format: double
+                    description: 'Bid Amount'
+                    example: '100'
+            required:
+                - bidAmount
+            type: object
+            additionalProperties: false
+        AuctionPayload:
+            properties:
+                offerId:
+                    type: string
+                    description: 'Venly OfferId'
+                    example: '123456789'
+                expirationTime:
+                    type: string
+                    description: 'Expiration timestamp'
+                    example: '123456789'
+                startingBid:
+                    type: number
+                    format: double
+                    description: 'Starting Bid, amount in USD'
+                    example: '123'
+            required:
+                - offerId
+                - expirationTime
+                - startingBid
+            type: object
+            additionalProperties: false
+        OfferResponse:
+            properties:
+                id:
+                    type: string
+                nft:
+                    $ref: '#/components/schemas/NftResponse'
+                sellerId:
+                    type: string
+                sellerNickname:
+                    type: string
+                sellerAddress:
+                    type: string
+                startDate:
+                    type: string
+                type:
+                    type: string
+                status:
+                    type: string
+                dataToSign:
+                    type: string
+                txInCustody:
+                    type: string
+                createdOn:
+                    type: string
+                createdBy:
+                    type: string
+                modifiedOn:
+                    type: string
+                modifiedBy:
+                    type: string
+                signed:
+                    type: boolean
+                currency:
+                    type: string
+                price:
+                    type: number
+                    format: double
+            required:
+                - id
+                - nft
+                - sellerId
+                - sellerNickname
+                - sellerAddress
+                - startDate
+                - type
+                - status
+                - dataToSign
+                - txInCustody
+                - createdOn
+                - createdBy
+                - modifiedOn
+                - modifiedBy
+                - signed
+                - currency
+                - price
+            type: object
+            additionalProperties: false
+        Offer:
+            properties:
+                success:
+                    type: boolean
+                result:
+                    $ref: '#/components/schemas/OfferResponse'
+            required:
+                - success
+                - result
+            type: object
+            additionalProperties: false
+        OrderResponse:
+            properties:
+                message:
+                    type: string
+                data:
+                    items:
+                        $ref: '#/components/schemas/Offer'
+                    type: array
+            required:
+                - message
+                - data
+            type: object
+            additionalProperties: false
+        OrderPayload:
+            properties:
+                total:
+                    type: string
+                items:
+                    type: string
+                walletAddress:
+                    type: string
+                userName:
+                    type: string
+            required:
+                - total
+                - items
+                - walletAddress
+                - userName
+            type: object
+            additionalProperties: false
+        OrderSingle:
+            properties:
+                sellerAddress:
+                    type: string
+                buyerAddress:
+                    type: string
+                nftId:
+                    type: string
+                nftName:
+                    type: string
+                nftImage:
+                    type: string
+                tokenId:
+                    type: string
+                nftPrice:
+                    type: number
+                    format: double
+            required:
+                - sellerAddress
+                - buyerAddress
+                - nftId
+                - nftName
+                - nftImage
+                - tokenId
+                - nftPrice
+            type: object
+            additionalProperties: false
+        OrdersResponse:
+            properties:
+                message:
+                    type: string
+                data:
+                    items:
+                        $ref: '#/components/schemas/OrderSingle'
+                    type: array
+            required:
+                - message
+                - data
+            type: object
+            additionalProperties: false
+        CardSingle:
+            properties:
+                cardId:
+                    type: string
+                    description: 'Card Id'
+                    example: '1234'
+                cardNumber:
+                    type: string
+                    description: 'Card Number'
+                    example: '1234567890123456'
+                expMonth:
+                    type: number
+                    format: double
+                    description: 'Card expiry month'
+                    example: '3'
+                expYear:
+                    type: number
+                    format: double
+                    description: 'Card expiry year'
+                    example: '2023'
+                name:
+                    type: string
+                    description: 'Card Holder Name'
+                    example: name
+                city:
+                    type: string
+                    description: 'Card Holder City'
+                    example: 'some city'
+                country:
+                    type: string
+                    description: 'Card Holder Country'
+                    example: 'some country'
+                line1:
+                    type: string
+                    description: 'Card Holder Address line 1'
+                    example: 'line 1'
+                line2:
+                    type: string
+                    description: 'Card Holder Address line 2'
+                    example: 'line 2'
+                district:
+                    type: string
+                    description: 'Card Holder district'
+                    example: 'district '
+                postalCode:
+                    type: string
+                    description: 'Card Holder postal Code'
+                    example: 'some code'
+                userId:
+                    type: string
+            required:
+                - cardId
+                - cardNumber
+                - expMonth
+                - expYear
+                - name
+                - city
+                - country
+                - line1
+                - line2
+                - district
+                - postalCode
+                - userId
+            type: object
+            additionalProperties: false
+        SingleCardResponse:
+            properties:
+                message:
+                    type: string
+                data:
+                    $ref: '#/components/schemas/CardSingle'
+            required:
+                - message
+                - data
+            type: object
+            additionalProperties: false
+        CardPayload:
+            properties:
+                cardId:
+                    type: string
+                    description: 'Card Id'
+                    example: '1234'
+                cardNumber:
+                    type: string
+                    description: 'Card Number'
+                    example: '1234567890123456'
+                expMonth:
+                    type: number
+                    format: double
+                    description: 'Card expiry month'
+                    example: '3'
+                expYear:
+                    type: number
+                    format: double
+                    description: 'Card expiry year'
+                    example: '2023'
+                name:
+                    type: string
+                    description: 'Card Holder Name'
+                    example: name
+                city:
+                    type: string
+                    description: 'Card Holder City'
+                    example: 'some city'
+                country:
+                    type: string
+                    description: 'Card Holder Country'
+                    example: 'some country'
+                line1:
+                    type: string
+                    description: 'Card Holder Address line 1'
+                    example: 'line 1'
+                line2:
+                    type: string
+                    description: 'Card Holder Address line 2'
+                    example: 'line 2'
+                district:
+                    type: string
+                    description: 'Card Holder district'
+                    example: 'district '
+                postalCode:
+                    type: string
+                    description: 'Card Holder postal Code'
+                    example: 'some code'
+            required:
+                - cardId
+                - cardNumber
+                - expMonth
+                - expYear
+                - name
+                - city
+                - country
+                - line1
+                - line2
+                - district
+                - postalCode
+            type: object
+            additionalProperties: false
+        CardsResponse:
+            properties:
+                data:
+                    items:
+                        $ref: '#/components/schemas/CardSingle'
+                    type: array
+            required:
+                - data
+            type: object
+            additionalProperties: false
+    securitySchemes:
+        bearerAuth:
+            type: http
+            scheme: bearer
+            bearerFormat: JWT
+info:
+    title: megacat-marketplace-server
+    version: 1.0.0
+    description: 'MegaCat Studios Whitelabel Marketplace Restful API with Node.js, Express and MongoDB'
+    license:
+        name: ISC
+    contact:
+        name: nikko-megacat
+openapi: 3.0.0
+paths:
+    /teams/create:
+        post:
+            operationId: CreateTeam
+            responses:
+                '200':
+                    description: Ok
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/SingleTeamResponse'
+                            examples:
+                                'Example 1':
+                                    value: {message: 'Member saved successfully!', data: {image: example.jpg, title: 'Sample Team', description: 'Some description'}}
+            summary: 'Creates a team with provided information'
+            tags:
+                - Team
+            security:
+                -
+                    bearerAuth: []
+            parameters: []
+            requestBody:
+                required: true
+                content:
+                    multipart/form-data:
+                        schema:
+                            type: object
+                            properties:
+                                image:
+                                    type: string
+                                    format: binary
+                                title:
+                                    type: string
+                                description:
+                                    type: string
+                            required:
+                                - image
+                                - title
+    /teams/index:
+        get:
+            operationId: FindTeam
+            responses:
+                '200':
+                    description: Ok
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/TeamsResponse'
+                            examples:
+                                'Example 1':
+                                    value: {data: [{image: example.jpg, title: 'Sample Team', description: 'Some description'}]}
+            summary: 'Get all created teams'
+            tags:
+                - Team
+            security: []
+            parameters: []
+    /auctions:
+        get:
+            operationId: GetAllOnGoing
+            responses:
+                '200':
+                    description: Ok
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/AuctionOfferResponse'
+                            examples:
+                                'Example 1':
+                                    value: {message: 'Offers was successfully get!', data: [{id: 2e95f17c-4ad3-4c30-818d-b5b6d90b9354, nft: {id: '18', address: '0xcd0307c4b5f99264629dc2526b61d4c156b6aff3', chain: MATIC, name: 'Gasless Demo Test-01', description: 'Some description.', imageUrl: 'https://bkcn.s3.amazonaws.com/pexels-pixabay-459762.jpg', imagePreviewUrl: 'https://bkcn.s3.amazonaws.com/pexels-pixabay-459762.jpg', imageThumbnailUrl: 'https://bkcn.s3.amazonaws.com/pexels-pixabay-459762.jpg', animationUrls: [], fungible: false, attributes: [{type: system, name: tokenTypeId, value: '17'}], contract: {chain: MATIC, address: '0xcd0307c4b5f99264629dc2526b61d4c156b6aff3', count: 0, name: 'Gasless Payments Collection', description: 'This collection is for gasless payment testing...', symbol: '**', url: 'https://bkcn.s3.amazonaws.com/pexels-mike-3601722.jpg', imageUrl: 'https://bkcn.s3.amazonaws.com/pexels-mike-3601722.jpg', media: [{type: image, value: 'https://bkcn.s3.amazonaws.com/pexels-mike-3601722.jpg'}], verified: false, premium: false, categories: []}, collectionIdentifier: 7c8abcab-e943-44f1-af73-0838a80abd25}, sellerId: b53930fb-5cb3-4e2c-81a4-f50226e4ef67, sellerNickname: megacatstudios, sellerAddress: '0xcc322810c276e17703925670d938a23dc5e697a1', startDate: '2022-02-07T07:59:16.945787Z', type: SALE, status: READY, dataToSign: 2e95f17c-4ad3-4c30-818d-b5b6d90b9354_0xcc322810c276e17703925670d938a23dc5e697a1_0x72C38DFF5Deb65F019f547170dEDd946104d573D_18, txInCustody: '0xce6dc77147150379e683d5b8e0af0318aea84025c0fc8c8d8e3b0e63e3ebaf31', createdOn: '2022-02-07T07:59:16.953231Z', createdBy: b53930fb-5cb3-4e2c-81a4-f50226e4ef67, modifiedOn: '2022-02-07T08:02:15.236967Z', modifiedBy: b53930fb-5cb3-4e2c-81a4-f50226e4ef67, signed: true, currency: USDC, price: 50, auction: {status: ongoing, expirationTime: '2022-02-28T07:59:00.000Z', startingBid: 50, ownerId: {name: 'John Snow', username: johnsnow01}, bids: [], id: 32}}]}
+            summary: 'Get list of all on-going auctions. All users can request this.'
+            tags:
+                - Auction
+            security: []
+            parameters: []
+        post:
+            operationId: CreateAuction
+            responses:
+                '200':
+                    description: Ok
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/AuctionResponse'
+                            examples:
+                                'Example 1':
+                                    value: {id: 1234, expirationTime: expirationTimeSTring, startingBid: 123, status: awaiting, ownerId: {name: 'John Snow', username: johnSnow01}, bids: []}
+            summary: 'Create auction with the following attributes: UserId, UserName, Password, isAdmin, isActive. All users can request this.'
+            tags:
+                - Auction
+            security:
+                -
+                    bearerAuth: []
+            parameters: []
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/AuctionPayload'
+    /auctions/user:
+        get:
+            operationId: GetAllCreatedByUser
+            responses:
+                '200':
+                    description: Ok
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/AuctionOfferResponse'
+                            examples:
+                                'Example 1':
+                                    value: {message: 'Offers was successfully get!', data: [{id: 2e95f17c-4ad3-4c30-818d-b5b6d90b9354, nft: {id: '18', address: '0xcd0307c4b5f99264629dc2526b61d4c156b6aff3', chain: MATIC, name: 'Gasless Demo Test-01', description: 'Some description.', imageUrl: 'https://bkcn.s3.amazonaws.com/pexels-pixabay-459762.jpg', imagePreviewUrl: 'https://bkcn.s3.amazonaws.com/pexels-pixabay-459762.jpg', imageThumbnailUrl: 'https://bkcn.s3.amazonaws.com/pexels-pixabay-459762.jpg', animationUrls: [], fungible: false, attributes: [{type: system, name: tokenTypeId, value: '17'}], contract: {chain: MATIC, address: '0xcd0307c4b5f99264629dc2526b61d4c156b6aff3', count: 0, name: 'Gasless Payments Collection', description: 'This collection is for gasless payment testing...', symbol: '**', url: 'https://bkcn.s3.amazonaws.com/pexels-mike-3601722.jpg', imageUrl: 'https://bkcn.s3.amazonaws.com/pexels-mike-3601722.jpg', media: [{type: image, value: 'https://bkcn.s3.amazonaws.com/pexels-mike-3601722.jpg'}], verified: false, premium: false, categories: []}, collectionIdentifier: 7c8abcab-e943-44f1-af73-0838a80abd25}, sellerId: b53930fb-5cb3-4e2c-81a4-f50226e4ef67, sellerNickname: megacatstudios, sellerAddress: '0xcc322810c276e17703925670d938a23dc5e697a1', startDate: '2022-02-07T07:59:16.945787Z', type: SALE, status: READY, dataToSign: 2e95f17c-4ad3-4c30-818d-b5b6d90b9354_0xcc322810c276e17703925670d938a23dc5e697a1_0x72C38DFF5Deb65F019f547170dEDd946104d573D_18, txInCustody: '0xce6dc77147150379e683d5b8e0af0318aea84025c0fc8c8d8e3b0e63e3ebaf31', createdOn: '2022-02-07T07:59:16.953231Z', createdBy: b53930fb-5cb3-4e2c-81a4-f50226e4ef67, modifiedOn: '2022-02-07T08:02:15.236967Z', modifiedBy: b53930fb-5cb3-4e2c-81a4-f50226e4ef67, signed: true, currency: USDC, price: 50, auction: {status: ongoing, expirationTime: '2022-02-28T07:59:00.000Z', startingBid: 50, ownerId: {name: 'John Snow', username: johnsnow01}, bids: [], id: 32}}]}
+            summary: 'Get list of all auctions created by the user.'
+            tags:
+                - Auction
+            security:
+                -
+                    bearerAuth: []
+            parameters: []
+    /auctions/participated:
+        get:
+            operationId: GetAllParticipatedByUser
+            responses:
+                '200':
+                    description: Ok
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/AuctionOfferResponse'
+                            examples:
+                                'Example 1':
+                                    value: {message: 'Offers was successfully get!', data: [{id: 2e95f17c-4ad3-4c30-818d-b5b6d90b9354, nft: {id: '18', address: '0xcd0307c4b5f99264629dc2526b61d4c156b6aff3', chain: MATIC, name: 'Gasless Demo Test-01', description: 'Some description.', imageUrl: 'https://bkcn.s3.amazonaws.com/pexels-pixabay-459762.jpg', imagePreviewUrl: 'https://bkcn.s3.amazonaws.com/pexels-pixabay-459762.jpg', imageThumbnailUrl: 'https://bkcn.s3.amazonaws.com/pexels-pixabay-459762.jpg', animationUrls: [], fungible: false, attributes: [{type: system, name: tokenTypeId, value: '17'}], contract: {chain: MATIC, address: '0xcd0307c4b5f99264629dc2526b61d4c156b6aff3', count: 0, name: 'Gasless Payments Collection', description: 'This collection is for gasless payment testing...', symbol: '**', url: 'https://bkcn.s3.amazonaws.com/pexels-mike-3601722.jpg', imageUrl: 'https://bkcn.s3.amazonaws.com/pexels-mike-3601722.jpg', media: [{type: image, value: 'https://bkcn.s3.amazonaws.com/pexels-mike-3601722.jpg'}], verified: false, premium: false, categories: []}, collectionIdentifier: 7c8abcab-e943-44f1-af73-0838a80abd25}, sellerId: b53930fb-5cb3-4e2c-81a4-f50226e4ef67, sellerNickname: megacatstudios, sellerAddress: '0xcc322810c276e17703925670d938a23dc5e697a1', startDate: '2022-02-07T07:59:16.945787Z', type: SALE, status: READY, dataToSign: 2e95f17c-4ad3-4c30-818d-b5b6d90b9354_0xcc322810c276e17703925670d938a23dc5e697a1_0x72C38DFF5Deb65F019f547170dEDd946104d573D_18, txInCustody: '0xce6dc77147150379e683d5b8e0af0318aea84025c0fc8c8d8e3b0e63e3ebaf31', createdOn: '2022-02-07T07:59:16.953231Z', createdBy: b53930fb-5cb3-4e2c-81a4-f50226e4ef67, modifiedOn: '2022-02-07T08:02:15.236967Z', modifiedBy: b53930fb-5cb3-4e2c-81a4-f50226e4ef67, signed: true, currency: USDC, price: 50, auction: {status: ongoing, expirationTime: '2022-02-28T07:59:00.000Z', startingBid: 50, ownerId: {name: 'John Snow', username: johnsnow01}, bids: [], id: 32}}]}
+            summary: 'Get list of all auctions in which user has participated.'
+            tags:
+                - Auction
+            security:
+                -
+                    bearerAuth: []
+            parameters: []
+    '/auctions/{id}':
+        get:
+            operationId: GetOne
+            responses:
+                '200':
+                    description: Ok
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/SingleAuctionResponse'
+                            examples:
+                                'Example 1':
+                                    value: {auction: {id: 123, bids: [], expirationTime: '1234355312', startingBid: 10, ownerId: {name: 'John Snow', username: johnsnow01}, status: Ongoing}, offer: {id: sammpleOfferId, price: 20, sellerAddress: sampleAdress}}
+            summary: 'Get a single Auction'
+            tags:
+                - Auction
+            security: []
+            parameters:
+                -
+                    description: 'The auction identifier'
+                    in: path
+                    name: id
+                    required: true
+                    schema:
+                        format: double
+                        type: number
+    '/auctions/{auctionId}/bid':
+        post:
+            operationId: AddBid
+            responses:
+                '200':
+                    description: Ok
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/AuctionResponse'
+                            examples:
+                                'Example 1':
+                                    value: {status: ongoing, expirationTime: '2022-02-28T07:59:00.000Z', startingBid: 50, ownerId: {name: 'John Snow', username: johnsnow01}, bids: [{userId: {name: 'Steve Jobs', username: stevejobs01}, bidAmount: 100}], id: 32}
+            summary: 'Create a bid on an ongoing auction with the following attributes: userId and bidAmount. All users can request this.'
+            tags:
+                - Auction
+            security:
+                -
+                    bearerAuth: []
+            parameters:
+                -
+                    description: 'The auction identifier'
+                    in: path
+                    name: auctionId
+                    required: true
+                    schema:
+                        format: double
+                        type: number
+                    example: 1234
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/BidPayload'
+    /order/create:
+        post:
+            operationId: Create
+            responses:
+                '200':
+                    description: Ok
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/OrderResponse'
+                            examples:
+                                'Example 1':
+                                    value: {message: 'Order successfully created and offers available', data: [{success: true, result: {id: 2e95f17c-4ad3-4c30-818d-b5b6d90b9354, nft: {id: '18', address: '0xcd0307c4b5f99264629dc2526b61d4c156b6aff3', chain: MATIC, name: 'Gasless Demo Test-01', description: 'Some description.', imageUrl: 'https://bkcn.s3.amazonaws.com/pexels-pixabay-459762.jpg', imagePreviewUrl: 'https://bkcn.s3.amazonaws.com/pexels-pixabay-459762.jpg', imageThumbnailUrl: 'https://bkcn.s3.amazonaws.com/pexels-pixabay-459762.jpg', animationUrls: [], fungible: false, attributes: [{type: system, name: tokenTypeId, value: '17'}], contract: {chain: MATIC, address: '0xcd0307c4b5f99264629dc2526b61d4c156b6aff3', count: 0, name: 'Gasless Payments Collection', description: 'This collection is for gasless payment testing...', symbol: '**', url: 'https://bkcn.s3.amazonaws.com/pexels-mike-3601722.jpg', imageUrl: 'https://bkcn.s3.amazonaws.com/pexels-mike-3601722.jpg', media: [{type: image, value: 'https://bkcn.s3.amazonaws.com/pexels-mike-3601722.jpg'}], verified: false, premium: false, categories: []}, collectionIdentifier: 7c8abcab-e943-44f1-af73-0838a80abd25}, sellerId: b53930fb-5cb3-4e2c-81a4-f50226e4ef67, sellerNickname: megacatstudios, sellerAddress: '0xcc322810c276e17703925670d938a23dc5e697a1', startDate: '2022-02-07T07:59:16.945787Z', type: SALE, status: READY, dataToSign: 2e95f17c-4ad3-4c30-818d-b5b6d90b9354_0xcc322810c276e17703925670d938a23dc5e697a1_0x72C38DFF5Deb65F019f547170dEDd946104d573D_18, txInCustody: '0xce6dc77147150379e683d5b8e0af0318aea84025c0fc8c8d8e3b0e63e3ebaf31', createdOn: '2022-02-07T07:59:16.953231Z', createdBy: b53930fb-5cb3-4e2c-81a4-f50226e4ef67, modifiedOn: '2022-02-07T08:02:15.236967Z', modifiedBy: b53930fb-5cb3-4e2c-81a4-f50226e4ef67, signed: true, currency: USDC, price: 50}}]}
+            summary: 'Create Order with the provided items'
+            tags:
+                - Order
+            security:
+                -
+                    bearerAuth: []
+            parameters: []
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/OrderPayload'
+    /order/index:
+        get:
+            operationId: GetOrders
+            responses:
+                '200':
+                    description: Ok
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/OrdersResponse'
+                            examples:
+                                'Example 1':
+                                    value: {message: 'Orders was successfully get!', data: [{_id: 61769057a2d13f3c97249aef, nftId: cb9fa713-bbb4-4738-b4a6-b06196c74c0c, nftName: Test5, nftPrice: 45, nftImage: 'https://bkcn.s3.ap-southeast-1.amazonaws.com/drop-3698073__340.jpg', tokenId: b53930fb-5cb3-4e2c-81a4-f50226e4ef67, sellerAddress: '0x52d58305510b962cc5298cb29f189e960697773d', buyerAddress: '0xcc322810c276e17703925670d938a23dc5e697a1'}]}
+            summary: 'Get all placed Orders'
+            tags:
+                - Order
+            security: []
+            parameters: []
+    /cards/create:
+        post:
+            operationId: Create
+            responses:
+                '200':
+                    description: Ok
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/SingleCardResponse'
+                            examples:
+                                'Example 1':
+                                    value: {message: 'Card saved successfully!', data: {cardId: '1234', cardNumber: '1234567890123456', expMonth: 3, expYear: 2023, name: someUser, city: 'some city', country: 'some country', line1: 'line 1', line2: line2, district: district, postalCode: code, userId: someUserId}}
+            summary: 'Create card with the provided items'
+            tags:
+                - Card
+            security:
+                -
+                    bearerAuth: []
+            parameters: []
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: '#/components/schemas/CardPayload'
+    /cards/index:
+        get:
+            operationId: Index
+            responses:
+                '200':
+                    description: Ok
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/CardsResponse'
+                            examples:
+                                'Example 1':
+                                    value: {data: [{cardId: '1234', cardNumber: '1234567890123456', expMonth: 3, expYear: 2023, name: someUser, city: 'some city', country: 'some country', line1: 'line 1', line2: line2, district: district, postalCode: code, userId: someUserId}]}
+            summary: 'Get all the cards created by the user'
+            tags:
+                - Card
+            security:
+                -
+                    bearerAuth: []
+            parameters: []
+servers:
+    -
+        url: /
+tags:
+    -
+        name: Auction
+        description: 'Get Auction information'
+    -
+        name: Team
+        Description: 'Get Team information'
+    -
+        name: Order
+        description: 'Get Order information'
+    -
+        name: Card
+        description: 'Get Cards information'

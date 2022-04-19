@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "mega-cat-labs-marketplace",
+  "private_key_id": "316c0c3fa5bdbd06274949a30058675e65d39b6c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCW+8DF1knX6iwS\noj6fi+s5bSPZ1PSrKOHyciibU6t/A0kR+Cs3mRmNwjruUr1hPlvJQX7/jPDy94XH\njwUQxEMQ3zJjkBVBA/3xjZPkbxWVNBoYYiESgBsW+Zwm0K/3dfeXiFJFr8zyccE/\nOGZhmOav5pFFKh+t7aZ2PcobxJ76wq8i0TCR13FI9X+yPoRj0xUJmdX7UYidRAV9\nHLzxMVmD7dvLTlBhG36vXSZle9Kz/NQfI0QLMMwfT7pHFIjkjL+RLJqnAzC5tTjr\neHrPuEJo9R3LjS+BvKlBgul3lXMr1lpHr7OBpz72yHCsOB3ukJOOHAivt398WQGM\no1uM8qerAgMBAAECggEANGGZasnCir86lShm05GGhUDhLETesbcYVLXYcrMfj4xD\nQJG55KsgG3dkXKSmAWPSEku/1MdAHPtVFXwABOYiYmsdHz+wsALDipdU1O7ZLQ+L\nciQxVyrMuzbUPv8t3Yu234KzEGxCjWZ75gQaOQgEGMjEY5uOrBgEJYegY+veQB7c\nQhr375dKWmFzAszvk6mUWxx5mEoaH0s6WWgczQOP+BRaMcVdEHun04rfkLzbe2LU\nKxHZ0xYh0dCNOUFoYqUbvnvmJYKw/jPAYHM02GWijNw/qw4zfSFAV2KEE0wufUqT\njFjECEOnd2ohC6UPv1wrJXCHW1JjpefaiFLivVB+eQKBgQDTK63TcKB/WY2wu7y+\n/86ptXLVgr14SuOoEGfU7cUwIgvG0MTjgHKodrFsnseORsE02GNWi/Sd3MEzMruJ\neW7UWEiy3B70fNiWWfc5GyENsSBK5JGuInBT691L46+Qbrr9hOaZgmPG6u6NE3Ok\nG+nHrtxjotuh/jjaFC40z9xoDwKBgQC3CSC0xrMUAlh91nPfe5S6XELIE5B9bhez\nw59R8xe06+Ift/GY24/wc/nuRVe5wYEebWy+/08Kd7fqfSy97zcczQ3IUYq6+8li\n9obny0ij1FG/8DpKq+LUWn1wBnItcCNs/HlcGXS4OQzPJDBP2AjNRcolbdkp0LqD\nOxoEz/0KpQKBgQDKS/rPJwMqXOFHIOK1WxxhKgljj0bxeVTUiTrfGhUggk0j3pXv\nl/q/dk2MUCO+IfwvIukvXQ4vOO8AnCZakbFhzV1/sy4Ya42Vo4QZ+epVUo0sEgGZ\nfzZ6vucWL33d8KZD/lBnWSk6w49aKPtMiM0R1WseLEMZ0hAmotSNFWABcwKBgCCF\n2a7lg5pxlEG/4lT6g4HdtOwSNeFjt4h0oRGRrUuzgjl6mM49bUUfhnBlF+Jk1MmQ\nTfteKDBG94IN/e493EAc228Vth3lcXJJNc1oHJ8nseL2D5WHF0X+Uj2el5klTNYn\nwnSv/UJiuLjxyDfXvjCjTvj5nNXGRe3diZEDWAYVAoGAdaVes4hK8gnbRQ2t7W1K\nOr42YvMmSFQMMoJ3mLoNNaaDdgi+5Ot1okPe8QHV+hgLkGW6/DaRQwu8UFHUxl8k\n6hFzBpnNCMktIhRaSJslARSXHXXfzONEH4QF1Q3tFrEI1pyDKYCmCfu9FS6Ez0xd\njv8POXAWOkJEFyElV4h6wCE=\n-----END PRIVATE KEY-----\n",
+  "client_email": "mcl-marketplace-sheets-staging@mega-cat-labs-marketplace.iam.gserviceaccount.com",
+  "client_id": "113557798734454374558",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/mcl-marketplace-sheets-staging%40mega-cat-labs-marketplace.iam.gserviceaccount.com"
+}

@@ -1,0 +1,15 @@
+###
+GET http://localhost:8080/cards/index
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjBmNGVkZTI0NTE4MjVhYjY3NTE4Y2MiLCJyb2xlIjoxLCJpYXQiOjE2NDYxMjM2MDcsImV4cCI6MTY0NjEyNzIwN30.CLkv52ZDFRbxqz50Ua-6DvOkVcK_SCPlbxDGXD2DYDE
+###
+POST http://localhost:8080/cards/create
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjBmNGVkZTI0NTE4MjVhYjY3NTE4Y2MiLCJyb2xlIjoxLCJpYXQiOjE2NDYxMjM2MDcsImV4cCI6MTY0NjEyNzIwN30.CLkv52ZDFRbxqz50Ua-6DvOkVcK_SCPlbxDGXD2DYDE
+content-type: application/json
+
+{
+    "cardId": "1234",
+    "cardNumber": "123456789012",
+    "expMonth": 3,
+    "expYear": 2023,
+    "csv": "789"
+}
